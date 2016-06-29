@@ -1,0 +1,4 @@
+<?php
+
+echo "dasd";
+exit;
