@@ -30,12 +30,12 @@
     </head>
     <div style="height: 40px;
                 width: 100%;
-                background-color: #006dcc;
+                
                 margin: auto;
                 z-index: 1;
                 position: fixed;">
        
-        <h3 style="margin-top: 0px; margin-left: 10px;">Bem vindo ao Portal Acadêmico da Faculdade Boas Novas!</h3>
+        <h3 style="margin-top: 0px; margin-left: 10px; color: #006dcc;"><a style="color: #006dcc;" href="http://localhost/portalescolar/"> ÊXITUS - Sistema Escolar Online - NOVO CADASTRO</a></h3>
             </div>
     
 	<body>
@@ -52,11 +52,9 @@
             
             <br><br><br><br><br><br>
             <div class="container">
-                <div class="span4 offset4">
+                <div class="span4 ">
                     <div class="padded">
-                        <center>
-                            <img src="<?php echo base_url();?>uploads/logo_login.png" style="max-height:100px;margin:20px 0px;" />
-                        </center>
+                        
                         <div class="login box_login" style="margin-top: 10px;">
                             
                             <div class="box-content padded">
@@ -73,7 +71,7 @@
                                         return true;
                                 }
                             </script>
-                                       <?php echo form_open('login/valida_login/' , array('class' => 'form-horizontal validatable', 'onsubmit', 'separate-sections', 'target' => '_top', 'enctype' => 'multipart/form-data'));?>
+                                       <?php echo form_open('cadastro/valida_email/' , array('class' => 'form-horizontal validatable', 'onsubmit', 'separate-sections', 'target' => '_top', 'enctype' => 'multipart/form-data'));?>
                              <form method="post" action="<?php echo base_url(); ?>index.php?login/valida_login/" class="form-horizontal validatable" enctype="multipart/form-data">
                              
 
@@ -134,37 +132,30 @@
                                     
                                     
 
-                                    
+                                 <div  >
                                     <div class="input-prepend">
                                         <span class="add-on" href="#">
                                         <i class="icon-envelope"></i>
                                         </span>
-                                        <input name="email" type="text" placeholder="<?php echo get_phrase('login');?>" autocomplete="off">
+                                        <input style="width: 400px;" name="email" required="true"  type="email"  placeholder="Informa um e-mail de Administrador" autocomplete="off">
                                     </div>
-                                    <div class="input-prepend">
-                                        <span class="add-on" href="#">
-                                        <i class="icon-key"></i>
-                                        </span>
-                                        <input name="password" type="password" placeholder="<?php echo get_phrase('senha');?>" autocomplete="off">
-                                    </div>
+                                    
                                  <br><br>
                                     <div class="row-fluid">
+                                        
                                         <div class="span6">
-                                            <a  data-toggle="modal" href="#modal-simple"  class="btn btn-blue btn-block" >
-                                                <?php echo get_phrase('esqueceu_sua_senha ?');?> 
-                                            </a>
+                                            <center><input type="submit" class="btn btn-info btn-block "  value="Enviar"/></center>   
                                         </div>
-                                        <div class="span6">
-                                            <input type="submit" class="btn btn-gray btn-block "  value="<?php echo get_phrase('login');?>"/>
-                                        </div>
+                                        
                                     </div>
+                                     </div>    
                                 </form>
                             </div>
                         </div>
                         <hr />
                         <div style="color:#006dcc;">
                         	
-                        		<center>&copy; 2015, Amazonia Global - Faculdade Boas Novas
+                        		<center>&copy; 2016, ÊXITUS - Sistema Escolar Online
                         		</center>
                             
                         </div>

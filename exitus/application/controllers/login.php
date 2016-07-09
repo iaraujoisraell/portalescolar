@@ -26,39 +26,21 @@ class Login extends CI_Controller {
     public function index() {
 
 
-        if ($this->session->userdata('admin_login') == 1)
-            redirect(base_url() . 'index.php?admin/educacional', 'refresh');
-        if ($this->session->userdata('teacher_login') == 1)
-            redirect(base_url() . 'index.php?teacher/dashboard', 'refresh');
-        if ($this->session->userdata('student_login') == 1)
-            redirect(base_url() . 'index.php?student/dashboard', 'refresh');
-        if ($this->session->userdata('parent_login') == 1)
-            redirect(base_url() . 'index.php?parents/dashboard', 'refresh');
 
 
-        $config = array(
-            array(
-                'field' => 'email',
-                'label' => 'Email'
-            ),
-            array(
-                'field' => 'password',
-                'label' => 'Password'
-            )
-        );
-
-        $this->form_validation->set_rules($config);
-        $this->form_validation->set_message('_validate_login', ucfirst($this->input->post('login_type')) . ' Login failed!');
-        $this->form_validation->set_error_delimiters('<div class="alert alert-error">
-								<button type="button" class="close" data-dismiss="alert">×</button>', '</div>');
-
-        if ($this->form_validation->run() == FALSE) {
+     
             $this->load->view('login');
-        } else {
-            
-        }
+     
+    }
+    
+    
+    /*****CADASTRO NOVO*****/
+
+     function cadastro_email() {
+        $this->load->view('cadastro');
     }
 
+    
     /*     * *validate login*** */
 
     function valida_login() {
@@ -92,6 +74,8 @@ class Login extends CI_Controller {
         $this->load->view('four_zero_four');
     }
 
+    
+    
     /*     * *RESET AND SEND PASSWORD TO REQUESTED EMAIL*** */
 
     function reset_password() {

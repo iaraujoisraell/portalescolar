@@ -1,205 +1,255 @@
-<?php
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
+<html>
+<head>
+<title>Sistema Escolar Online - SEO</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="css/bootstrap.css" rel='stylesheet' type='text/css'/>
+<link href="css/bootstrap.min.css" rel='stylesheet' type='text/css' />
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all"/>
+ <script src="js/jquery.easing.min.js"></script>
+<link href='http://fonts.googleapis.com/css?family=Raleway:400,100,300,500,700,800,900,600,200' rel='stylesheet' type='text/css'>
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="keywords" content="Agro Agency Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<script src="js/jquery.min.js"> </script>
+<!---- start-smoth-scrolling---->
+		<script type="text/javascript" src="js/move-top.js"></script>
+		<script type="text/javascript" src="js/easing.js"></script>
+		<script type="text/javascript">
+			jQuery(document).ready(function($) {
+				$(".scroll").click(function(event){		
+					event.preventDefault();
+					$('html,body').animate({scrollTop:$(this.hash).offset().top},900);
+				});
+			});
+		</script>
+ 	<!---- start-smoth-scrolling---->
 
-/*
- *---------------------------------------------------------------
- * APPLICATION ENVIRONMENT
- *---------------------------------------------------------------
- *
- * You can load different configurations depending on your
- * current environment. Setting the environment also influences
- * things like logging and error reporting.
- *
- * This can be set to anything, but default usage is:
- *
- *     development
- *     testing
- *     production
- *
- * NOTE: If you change these, also change the error_reporting() code below
- *
- */
-	define('ENVIRONMENT', 'production');
-/*
- *---------------------------------------------------------------
- * ERROR REPORTING
- *---------------------------------------------------------------
- *
- * Different environments will require different levels of error reporting.
- * By default development will show errors but testing and live will hide them.
- */
+<!----//requred-js-files---->
+		<script type="text/javascript" 	src="js/jquery.smint.js"></script>
+		<script type="text/javascript">
+			$(document).ready( function() {
+			    $('.subMenu').smint({
+			    	'scrollSpeed' : 1000
+			    });
+			});
+		</script>
 
-if (defined('ENVIRONMENT'))
-{
-	switch (ENVIRONMENT)
-	{
-		case 'development':
-			error_reporting(E_ALL);
-		break;
-	
-		case 'testing':
-		case 'production':
-			error_reporting(0);
-		break;
+</head>
+<body>
+<!--body-->
+<div id="home" class="banner">
+	 <div class="container">
+             <div style="width: 100%; height: 0px; ">
+                 <div>
+                     <a class="hvr-shutter-out-vertical button" href="http://localhost/portalescolar/exitus/"><font style="">LOGIN</font></a>
+                      <a class="hvr-shutter-out-vertical button" href="http://localhost/portalescolar/exitus/index.php?/cadastro"><font style="">CADASTRE-SE</font></a>
+                 </div>
+                 
+                 
+             </div>
+		 <div class="banner-info">
+			 <div class="logo">
+				 <a href="index.html"><img src="images/logo.png" alt=""/></a>
+			 </div>
+                     <h1><font style="color: #002166"> ÊXITUS</font></h1>
+                     <h1><font style="color: #002166">Sistema Escolar Online </font></h1>
+			 <p><font style="color: #002166">Gerencia sua escola com um sistema online,seguro, fácil e prático</font></p>
+                         <a  style="background-color: #002166" class="hvr-shutter-out-vertical button" href="#top_grid"><font  >Saiba mais</font></a>
+		</div>
+	 </div>
+</div>
+<!---->
+<div class="navigation">
+	 <div class="container">
+		 <div class="fixed-header">
+			 <div class="top-menu">
+				 <ul>
+					 <li class="active"><a class="scroll" href="#home">HOME</a></li>
+					 <li><a class="scroll" href="#about">ABOUT</a></li>
+					 <li><a class="scroll" href="#gallery">GALLERY</a></li>
+					 <li><a class="scroll" href="#contact">CONTACT</a></li>
+				 </ul>			
+			 </div>
+			 <div class="right-msg">
+				 <a class="scroll" href="#contact"><img src="images/contact.png" alt=""/></a>
+			 </div>
+			 <div class="clearfix"></div>
+		 </div>
+		 <script>
+			$("span.menu").click(function(){
+				$(".top-menu ul").slideToggle(500, function(){
+				});
+			});
+			</script>
 
-		default:
-			exit('The application environment is not set correctly.');
-	}
-}
+				<!-- script for menu -->
+					<script type="text/javascript">
+					jQuery(document).ready(function($) {
+						$(".scroll").click(function(event){		
+							event.preventDefault();
+							$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+						});
+					});
+					</script>
 
-/*
- *---------------------------------------------------------------
- * SYSTEM FOLDER NAME
- *---------------------------------------------------------------
- *
- * This variable must contain the name of your "system" folder.
- * Include the path if the folder is not in the same  directory
- * as this file.
- *
- */
-	$system_path = 'system';
-
-/*
- *---------------------------------------------------------------
- * APPLICATION FOLDER NAME
- *---------------------------------------------------------------
- *
- * If you want this front controller to use a different "application"
- * folder then the default one you can set its name here. The folder
- * can also be renamed or relocated anywhere on your server.  If
- * you do, use a full server path. For more info please see the user guide:
- * http://codeigniter.com/user_guide/general/managing_apps.html
- *
- * NO TRAILING SLASH!
- *
- */
-	$application_folder = 'application';
-
-/*
- * --------------------------------------------------------------------
- * DEFAULT CONTROLLER
- * --------------------------------------------------------------------
- *
- * Normally you will set your default controller in the routes.php file.
- * You can, however, force a custom routing by hard-coding a
- * specific controller class/function here.  For most applications, you
- * WILL NOT set your routing here, but it's an option for those
- * special instances where you might want to override the standard
- * routing in a specific front controller that shares a common CI installation.
- *
- * IMPORTANT:  If you set the routing here, NO OTHER controller will be
- * callable. In essence, this preference limits your application to ONE
- * specific controller.  Leave the function name blank if you need
- * to call functions dynamically via the URI.
- *
- * Un-comment the $routing array below to use this feature
- *
- */
-	// The directory name, relative to the "controllers" folder.  Leave blank
-	// if your controller is not in a sub-folder within the "controllers" folder
-	// $routing['directory'] = '';
-
-	// The controller class file name.  Example:  Mycontroller
-	// $routing['controller'] = '';
-
-	// The controller function you wish to be called.
-	// $routing['function']	= '';
-
-
-/*
- * -------------------------------------------------------------------
- *  CUSTOM CONFIG VALUES
- * -------------------------------------------------------------------
- *
- * The $assign_to_config array below will be passed dynamically to the
- * config class when initialized. This allows you to set custom config
- * items or override any default config values found in the config.php file.
- * This can be handy as it permits you to share one application between
- * multiple front controller files, with each file containing different
- * config values.
- *
- * Un-comment the $assign_to_config array below to use this feature
- *
- */
-	// $assign_to_config['name_of_config_item'] = 'value of config item';
-
-
-
-// --------------------------------------------------------------------
-// END OF USER CONFIGURABLE SETTINGS.  DO NOT EDIT BELOW THIS LINE
-// --------------------------------------------------------------------
-
-/*
- * ---------------------------------------------------------------
- *  Resolve the system path for increased reliability
- * ---------------------------------------------------------------
- */
-
-	// Set the current directory correctly for CLI requests
-	if (defined('STDIN'))
-	{
-		chdir(dirname(__FILE__));
-	}
-
-	if (realpath($system_path) !== FALSE)
-	{
-		$system_path = realpath($system_path).'/';
-	}
-
-	// ensure there's a trailing slash
-	$system_path = rtrim($system_path, '/').'/';
-
-	// Is the system path correct?
-	if ( ! is_dir($system_path))
-	{
-		exit("Your system folder path does not appear to be set correctly. Please open the following file and correct this: ".pathinfo(__FILE__, PATHINFO_BASENAME));
-	}
-
-/*
- * -------------------------------------------------------------------
- *  Now that we know the path, set the main path constants
- * -------------------------------------------------------------------
- */
-	// The name of THIS file
-	define('SELF', pathinfo(__FILE__, PATHINFO_BASENAME));
-
-	// The PHP file extension
-	// this global constant is deprecated.
-	define('EXT', '.php');
-
-	// Path to the system folder
-	define('BASEPATH', str_replace("\\", "/", $system_path));
-
-	// Path to the front controller (this file)
-	define('FCPATH', str_replace(SELF, '', __FILE__));
-
-	// Name of the "system folder"
-	define('SYSDIR', trim(strrchr(trim(BASEPATH, '/'), '/'), '/'));
+				<!-- script for menu -->
+				<script>
+			 $(document).ready(function() {
+				 var navoffeset=$(".navigation").offset().top;
+				 $(window).scroll(function(){
+					var scrollpos=$(window).scrollTop(); 
+					if(scrollpos >=navoffeset){
+						$(".navigation").addClass("fixed");
+					}else{
+						$(".navigation").removeClass("fixed");
+					}
+				 });
+				 
+			 });
+			 </script>
+	 </div>
+</div>
+<!---->
+<div id="top_grid" class="top-grid">
+	 <div class="container">
+		 <div class="top-grid-section">
+			 <div class="col-md-3 top-grids">
+				 <span class="icon1"></span>
+				 <h3>Agriculture Design</h3>
+				 <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet aliquam erat volutpat.</p>
+			 </div>
+			 <div class="col-md-3 top-grids">
+				 <span class="icon2"></span>
+				 <h3>Seeds Development</h3>
+				 <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet aliquam erat volutpat.</p>
+			 </div>
+			 <div class="col-md-3 top-grids">
+				 <span class="icon3"></span>
+				 <h3>Corn Seeds</h3>
+				 <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet aliquam erat volutpat.</p>
+			 </div>
+			 <div class="col-md-3 top-grids">
+				 <span class="icon4"></span>
+				 <h3>Leaf Development</h3>
+				 <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet aliquam erat volutpat.</p>
+			 </div>
+			 <div class="clearfix"></div>
+		 </div>
+	 </div>
+</div>
 
 
-	// The path to the "application" folder
-	if (is_dir($application_folder))
-	{
-		define('APPPATH', $application_folder.'/');
-	}
-	else
-	{
-		if ( ! is_dir(BASEPATH.$application_folder.'/'))
-		{
-			exit("Your application folder path does not appear to be set correctly. Please open the following file and correct this: ".SELF);
-		}
+<!---->
+<div id="about" class="about">
+	 <div class="container">
+		 <div class="col-md-6 about-pic">
+			 <img src="images/trac.jpg" alt=""/>
+		 </div>
+		 <div class="col-md-6 about-info">
+			 <h3>Agriculture Design</h3>
+			 <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation 
+			 sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip
+			 ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
+			 <a class="hvr-bounce-to-bottom" href="#">Read More</a>
+		 </div>
+	 </div>
+</div>
+<!----start-portfolio---->
+		
+		<!----//End-portfolio---->
+		<script src="js/bootstrap.min.js"></script>
+		<!----start-model-box---->
+						<a data-toggle="modal" data-target=".bs-example-modal-md" href="#"> </a>
+						<div class="modal fade bs-example-modal-md light-box" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+						  <div class="modal-dialog modal-md">
+						    <div class="modal-content light-box-info">
+						    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><img src="images/close.png" title="close" /></button>
+						     <h3>Place Yours content here</h3>
+						     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris egestas orci et blandit dictum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque posuere diam et est hendrerit, eget sodales lectus tincidunt. Etiam suscipit orci sapien, at molestie lorem imperdiet vitae. Fusce nunc eros, congue non hendrerit sed, lobortis scelerisque magna. Ut in nunc sem. Integer bibendum enim et erat molestie, sed interdum nisl ultricies. In hac habitasse platea dictumst. Nullam sem diam, tincidunt dapibus tellus pulvinar, pulvinar tempus dui. Integer eu faucibus arcu. Duis adipiscing commodo ipsum dapibus elementum.</p>
+						    </div>
+						  </div>
+						</div>
+						<!----start-model-box---->
+		<!----start-contact---->
+		<!---testmonials---->
+		<div  class="testmonials section s3">
+			<div class="container">
+			<div class="bs-example">
+			    <div id="myCarousel" class="carousel slide" data-interval="3000" data-ride="carousel">
+			    	<!-- Carousel indicators -->
+			        <ol class="carousel-indicators pagenate-icons">
+			            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+			            <li data-target="#myCarousel" data-slide-to="1"></li>
+			            <li data-target="#myCarousel" data-slide-to="2"></li>
+			        </ol>   
+			       <!-- Carousel items -->
+			        <div class="carousel-inner">
+			            <div class="active item">
+			               <img src="images/people.jpg" title="name" />
+			                <div class="carousel-caption caption">
+			                  <h3>Dan Cederholm</h3>
+			                  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. </p>
+			                </div>
+			            </div>
+			            <div class="item">
+			               <img src="images/people.jpg" title="name" />
+			                <div class="carousel-caption caption">
+			                  <h3>Dan Cederholm</h3>
+			                  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. </p>
+			                </div>
+			            </div>
+			            <div class="item">
+			                <img src="images/people.jpg" title="name" />
+			                <div class="carousel-caption caption">
+			                  <h3>Dan Cederholm</h3>
+			                  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. </p>
+			                </div>
+			            </div>
+			        </div>
+			        <!-- Carousel nav -->
+			    </div>
+		</div>
+		</div>
+		</div>
+		<!---testmonials---->
+<!----start-contact---->
+<div id="contact" class="contact section s4">
+	 <div class="container">
+		 <h4>Contact</h4>
+		 <p class="contact-head">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. </p>
+		  <div class="row contact-form">
+				<form>
+					<div class="col-md-6 text-box">
+						<input type="text" placeholder="Name" />
+						<input type="text" placeholder="Email" />
+						<input type="text" placeholder="Subject" />
+				    </div>
+					 <div class="col-md-6 textarea">
+							<textarea>Message</textarea>
+					  </div>
+					  <div class="clearfix"> </div><br />
+					  <input class="btn-red-lg" type="submit" value="Submit Message" />
+			  </form>
+		  </div>
+		  <div class="social-media">			
+			 <a href="#"><i class="facebook"></i></a>
+			 <a href="#"><i class="pinterest"></i></a>
+			 <a href="#"><i class="twitter"></i></a>
+			 <a href="#"><i class="google"></i></a>
+</div>
+<div class="copy-right">
+		<p>Copyright &#169; 2014 <span>Agency of Agriculture</span> All Rights Reserved.</p>
+		<p>Design by<a href="http://w3layouts.com/">W3layouts</a></p>
+</div>
+	 </div>
+</div>
 
-		define('APPPATH', BASEPATH.$application_folder.'/');
-	}
-
-/*
- * --------------------------------------------------------------------
- * LOAD THE BOOTSTRAP FILE
- * --------------------------------------------------------------------
- *
- * And away we go...
- *
- */
-require_once BASEPATH.'core/CodeIgniter.php';
-
-/* End of file index.php */
-/* Location: ./index.php */
+				
